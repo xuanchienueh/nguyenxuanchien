@@ -387,7 +387,26 @@ ul {
     margin-bottom: 40px;
     font-weight: 900; }
   #portfolio span {
+    position: relative;
+    overflow: hidden;
     position: relative; }
+    #portfolio span::before {
+      content: "";
+      position: absolute;
+      left: -25%;
+      top: -10%;
+      bottom: -5%;
+      width: 54px;
+      background-color: white;
+      transform: rotate(10deg);
+      transition: all 0.5s;
+      opacity: 0; }
+    #portfolio span:hover .author {
+      bottom: 24px;
+      opacity: 1; }
+    #portfolio span:hover::before {
+      left: 120%;
+      opacity: 1; }
     #portfolio span .author {
       position: absolute;
       z-index: 2;
@@ -403,9 +422,6 @@ ul {
         font-weight: 900; }
       #portfolio span .author p {
         color: rgba(255, 255, 255, 0.8); }
-    #portfolio span:hover .author {
-      bottom: 24px;
-      opacity: 1; }
     #portfolio span .plus {
       text-align: center;
       color: white;

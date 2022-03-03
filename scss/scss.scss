@@ -498,6 +498,27 @@
   
     span {
       position: relative;
+      overflow: hidden;
+      position: relative;
+      &::before { 
+        content: "";
+        position: absolute;
+        left: -25%;
+        top: -10%;
+        bottom: -5%;width: 54px;
+        background-color: white;
+        transform: rotate(10deg);
+        transition: all 0.5s;
+        opacity: 0;
+      }
+      &:hover { 
+        .author { 
+          bottom: 24px;
+          opacity: 1;
+        }
+        &::before { left: 120%; opacity: 1;}
+      }
+     
   
       .author {
         position: absolute;
@@ -518,11 +539,6 @@
         p {
           color: rgba(255, 255, 255, 0.8);
         }
-      }
-  
-      &:hover .author {
-        bottom: 24px;
-        opacity: 1;
       }
   
       .plus { 
